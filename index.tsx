@@ -1,5 +1,5 @@
 // Source: https://github.com/react-community/react-native-platform-touchable
-import React, { PureComponent, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import {
   BackgroundPropType,
   Platform,
@@ -65,7 +65,7 @@ export interface PlatformTouchableProperties
   useForeground?: boolean
 }
 
-export default class PlatformTouchable extends PureComponent<
+export default class PlatformTouchable extends React.PureComponent<
   PlatformTouchableProperties
 > {
   static Ripple = TouchableComponent.Ripple
