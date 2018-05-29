@@ -17,11 +17,11 @@ import {
 interface TouchableMethods {
   Ripple: TouchableNativeFeedbackStatic['Ripple'] | (() => {})
   SelectableBackground:
-  | TouchableNativeFeedbackStatic['SelectableBackground']
-  | (() => {})
+    | TouchableNativeFeedbackStatic['SelectableBackground']
+    | (() => {})
   SelectableBackgroundBorderless:
-  | TouchableNativeFeedbackStatic['SelectableBackgroundBorderless']
-  | (() => {})
+    | TouchableNativeFeedbackStatic['SelectableBackgroundBorderless']
+    | (() => {})
   canUseNativeForeground: () => boolean
 }
 
@@ -57,7 +57,7 @@ TouchableComponent =
 
 export interface PlatformTouchableProperties
   extends TouchableNativeFeedbackProperties,
-  TouchableOpacityProperties {
+    TouchableOpacityProperties {
   background?: BackgroundPropType
   children: ReactNode
   foreground?: BackgroundPropType
@@ -67,7 +67,7 @@ export interface PlatformTouchableProperties
 
 export default class PlatformTouchable extends PureComponent<
   PlatformTouchableProperties
-  > {
+> {
   static Ripple = TouchableComponent.Ripple
   static SelectableBackground = TouchableComponent.SelectableBackground
   static SelectableBackgroundBorderless = TouchableComponent.SelectableBackgroundBorderless
@@ -103,22 +103,21 @@ export default class PlatformTouchable extends PureComponent<
 
       return (
         <TouchableNativeFeedback
-          { ...props }
-          useForeground = { useForeground }
-      background = {(useForeground && foreground) || background
-    }
+          {...props}
+          useForeground={useForeground}
+          background={(useForeground && foreground) || background}
         >
-      <View style={ style }> { children } < /View>
-        < /TouchableNativeFeedback>
+          <View style={style}>{children}</View>
+        </TouchableNativeFeedback>
       )
-  }
+    }
 
-    {
-  return (
-    <TouchableOpacity { ...props } style = { style } >
-      { children }
-      < /TouchableOpacity>
+    else {
+      return (
+        <TouchableOpacity {...props} style={style}>
+          {children}
+        </TouchableOpacity>
       )
-}
+    }
   }
 }

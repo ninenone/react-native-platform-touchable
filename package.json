@@ -3,13 +3,13 @@
   "version": "1.1.1",
   "description": "Uses TouchableNativeFeedback where possible and fallback to alternatives where not.",
   "license": "BSD-3-Clause",
-  "main": "index.ts",
+  "main": "index.tsx",
   "scripts": {
     "lint": "eslint .",
     "prettier": "eslint . --fix"
   },
   "files": [
-    "index.ts"
+    "index.tsx"
   ],
   "keywords": [
     "react-native",
